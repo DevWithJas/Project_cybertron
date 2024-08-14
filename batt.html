@@ -15,8 +15,11 @@
             font-family: 'Orbitron', sans-serif;
             color: #fddf00;
             overflow-x: hidden;
+            overflow-y: hidden; /* Disable vertical scroll bar */
             background: url('C:/Users/JAS/Downloads/pexels-daniel-olivier-578240085-17860200.jpg') no-repeat center center fixed;
             background-size: cover;
+            height: 100vh;
+            width: 100vw;
         }
 
         .parallax {
@@ -25,6 +28,8 @@
             background-repeat: no-repeat;
             background-position: center;
             position: relative;
+            height: 100%;
+            width: 100%;
         }
 
         .navbar {
@@ -32,7 +37,8 @@
             justify-content: flex-end;
             align-items: center;
             padding: 15px 20px;
-            background-color: rgba(36, 36, 36, 0.8); /* Dark gray background with transparency */
+            background-color: rgba(36, 36, 36, 0.8);
+            /* Dark gray background with transparency */
             border-bottom: 1px solid #333;
             position: fixed;
             top: 0;
@@ -69,7 +75,7 @@
 
         .navbar-menu a {
             text-decoration: none;
-            color: #505c7c;
+            color: #b3b3b3; /* Lighter gray for better contrast */
             font-size: 16px;
             position: relative;
             transition: color 0.3s ease;
@@ -130,7 +136,8 @@
                 position: absolute;
                 top: 60px;
                 right: 0;
-                background-color: rgba(40, 46, 60, 0.9); /* Slate background with transparency */
+                background-color: rgba(40, 46, 60, 0.9);
+                /* Slate background with transparency */
                 width: 100%;
                 height: 100vh;
                 transform: translateX(100%);
@@ -152,17 +159,18 @@
         }
 
         .intro {
-            height: 100vh;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
             text-align: left;
-            background-color: rgba(17, 17, 17, 0.7); /* Semi-transparent background for readability */
-            padding: 20px;
-            padding-top: 100px;
+            background-color: transparent; /* Remove the semi-transparent background */
+            padding: 50px 20px; /* Increased padding for more spacious layout */
+            padding-top: 120px;
             box-sizing: border-box;
-            color: #fddf00; /* Yellow text */
+            color: #fddf00;
+            /* Yellow text */
         }
 
         .intro h1 {
@@ -173,12 +181,15 @@
         .intro p {
             font-size: 36px;
             max-width: 700px;
-            color: #988829; /* Olive text */
+            color: #fddf00;
+            /* Adjust text color for better contrast */
         }
 
         @media (max-width: 768px) {
             .intro {
-                padding-top: 80px;
+                padding-top: 100px;
+                padding-left: 10px;
+                padding-right: 10px;
             }
 
             .intro h1 {
@@ -193,7 +204,7 @@
         /* Futuristic HUD Social Media Panel */
         .social-panel {
             position: fixed;
-            right: 0;
+            right: 10px; /* Adjusted positioning */
             top: 50%;
             transform: translateY(-50%);
             display: flex;
@@ -208,7 +219,8 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            background: rgba(40, 46, 60, 0.8); /* Slate background with transparency */
+            background: rgba(40, 46, 60, 0.8);
+            /* Slate background with transparency */
             border: 2px solid #505c7c;
             color: #fddf00;
             text-decoration: none;
@@ -262,7 +274,6 @@
             }
         }
 
-        /* Bat GIF */
         .bat-gif {
             position: absolute;
             width: 100px;
@@ -271,14 +282,18 @@
             left: 0;
             opacity: 0;
             z-index: 100;
-            animation: batAnimation 5s linear infinite;
-            animation-delay: 20s;
+            animation: batAnimation 25s linear infinite;
         }
 
         @keyframes batAnimation {
             0% {
                 transform: translate(0, 0);
                 opacity: 1;
+            }
+
+            20% {
+                transform: translate(120vw, 120vh);
+                opacity: 0;
             }
 
             100% {
@@ -311,7 +326,8 @@
         <div class="intro">
             <div>
                 <h1>I'm Jas Sharma</h1>
-                <p>"In a world of data chaos, I'm the engineer this city needs, not the one it deserves, harnessing AI to uncover hidden truths and drive the future."</p>
+                <p>"In a world of data chaos, I'm the engineer this city needs, not the one it deserves, harnessing AI
+                    to uncover hidden truths and drive the future."</p>
             </div>
         </div>
 
@@ -356,3 +372,4 @@
 </body>
 
 </html>
+

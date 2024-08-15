@@ -16,7 +16,7 @@
             color: #fddf00;
             overflow-x: hidden;
             overflow-y: hidden;
-            background: url("pexels-daniel-olivier-578240085-17860200.jpg") no-repeat center center fixed;
+            background: url('C:/Users/JAS/Downloads/pexels-daniel-olivier-578240085-17860200.jpg') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
             width: 100vw;
@@ -187,11 +187,13 @@
             }
 
             .intro h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
             .intro p {
-                font-size: 1.75rem;
+                font-size: 1.25rem;
+                margin-left: 5%;
+                margin-right: 5%;
             }
         }
 
@@ -294,10 +296,11 @@
             }
         }
 
+        /* Adjusting the padding for the time display to prevent overlap with the navbar toggle */
         .time-display {
             position: fixed;
             top: 60px;
-            right: 20px;
+            right: 30px; /* Increased padding to the right */
             color: #707a91;
             font-size: 1.125rem;
             font-family: 'Orbitron', sans-serif;
@@ -307,8 +310,8 @@
         @media (max-width: 768px) {
             .time-display {
                 top: 60px;
-                right: 10px;
-                font-size: 0.875rem;
+                right: 20px; /* Adjusted for small screens */
+                font-size: 1rem; /* Slightly larger for readability */
             }
         }
     </style>
@@ -399,3 +402,4 @@
 </body>
 
 </html>
+

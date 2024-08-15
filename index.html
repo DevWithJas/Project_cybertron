@@ -135,9 +135,10 @@
                 right: 0;
                 background-color: rgba(40, 46, 60, 0.9);
                 width: 100%;
-                height: 100vh;
+                height: calc(100vh - 60px);
                 transform: translateX(100%);
                 transition: transform 0.3s ease;
+                padding-top: 1rem;
             }
 
             .navbar-menu.active {
@@ -145,7 +146,7 @@
             }
 
             .navbar-menu li {
-                margin: 20px 0;
+                margin: 15px 0;
                 text-align: center;
             }
 
@@ -299,19 +300,23 @@
         /* Adjusting the padding for the time display to prevent overlap with the navbar toggle */
         .time-display {
             position: fixed;
-            top: 60px;
-            right: 30px; /* Increased padding to the right */
-            color: #707a91;
-            font-size: 1.125rem;
+            top: 80px; /* Moved below the navbar */
+            right: 20px;
+            color: #fdff00;
+            font-size: 1rem;
             font-family: 'Orbitron', sans-serif;
             z-index: 10;
+            text-align: right;
+            background-color: rgba(36, 36, 36, 0.8); /* Adding background to avoid overlap */
+            padding: 5px 10px;
+            border-radius: 5px;
         }
 
         @media (max-width: 768px) {
             .time-display {
-                top: 60px;
-                right: 20px; /* Adjusted for small screens */
-                font-size: 1rem; /* Slightly larger for readability */
+                top: 70px;
+                right: 10px;
+                font-size: 0.875rem; /* Slightly smaller for readability */
             }
         }
     </style>
@@ -402,4 +407,5 @@
 </body>
 
 </html>
+
 

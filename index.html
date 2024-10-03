@@ -5,319 +5,271 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jas Sharma - Portfolio</title>
-    <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <style>
-        /* General Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        /* Futuristic font */
 
         body {
+            margin: 0;
             font-family: 'Orbitron', sans-serif;
-            color: #ffffff;
-            background-color: #121212;
+            color: #fddf00;
             overflow-x: hidden;
-            position: relative;
+            overflow-y: hidden;
+            background: url('C:/Users/JAS/Downloads/pexels-daniel-olivier-578240085-17860200.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
         }
 
-        /* Navbar Styles */
-        .navbar {
+        .parallax {
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            height: 100%;
             width: 100%;
-            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 1rem;
+            background-color: rgba(36, 36, 36, 0.8);
+            border-bottom: 1px solid #333;
             position: fixed;
             top: 0;
             left: 0;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            width: 100%;
+            z-index: 10;
+            box-sizing: border-box;
         }
 
         .navbar-logo {
-            color: #fddf00;
-            font-size: 24px;
+            font-size: 1.25rem;
             font-weight: bold;
-            cursor: pointer;
+            color: #fddf00;
+            transition: color 0.3s ease;
+            margin-right: auto;
+        }
+
+        .navbar-logo:hover {
+            color: #988829;
         }
 
         .navbar-menu {
-            list-style: none;
             display: flex;
-            flex-direction: column;
-            background: rgba(0, 0, 0, 0.9);
-            width: 100%;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            right: -100%;
-            height: 100vh;
-            justify-content: center;
-            transition: right 0.3s ease;
-            z-index: 999;
-        }
-
-        .navbar-menu.active {
-            right: 0;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
         }
 
         .navbar-menu li {
-            margin: 20px 0;
+            margin-left: 1rem;
         }
 
         .navbar-menu a {
-            color: #fddf00;
             text-decoration: none;
-            font-size: 18px;
+            color: #b3b3b3;
+            font-size: 1rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-menu a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -3px;
+            left: 0;
+            background-color: #988829;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-menu a:hover::before {
+            visibility: visible;
+            width: 100%;
+        }
+
+        .navbar-menu a:hover {
+            color: #fdff00;
         }
 
         .navbar-toggle {
-            display: flex;
-            flex-direction: column;
+            display: none;
             cursor: pointer;
+            flex-direction: column;
         }
 
-        .navbar-toggle span {
-            height: 3px;
+        .navbar-toggle div {
             width: 25px;
-            background: #fddf00;
-            margin-bottom: 5px;
-            border-radius: 5px;
+            height: 2px;
+            background-color: #988829;
+            margin: 5px 0;
+            transition: all 0.3s ease;
         }
 
-        /* Hero Section */
-        .hero {
+        .navbar-toggle.active div:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .navbar-toggle.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar-toggle.active div:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            .navbar-menu {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: rgba(40, 46, 60, 0.9);
+                width: 100%;
+                height: calc(100vh - 60px);
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                padding-top: 1rem;
+            }
+
+            .navbar-menu.active {
+                transform: translateX(0);
+            }
+
+            .navbar-menu li {
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            .navbar-toggle {
+                display: flex;
+            }
+        }
+
+        .intro {
+            height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            min-height: 100vh;
-            padding: 20px;
-            color: #ffffff;
-            background: url('https://raw.githubusercontent.com/DevWithJas/Project_cybertron/7a10b4077b8dcad0cd1c048483ed099f9d7b043b/pexels-daniel-olivier-578240085-17860200.jpg') no-repeat center center;
-            background-size: cover;
-            position: relative;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+            background-color: transparent;
+            padding: 3rem 1.5rem;
+            padding-top: 8rem;
+            box-sizing: border-box;
+            color: #fddf00;
         }
 
-        .hero::after {
+        .intro h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .intro p {
+            font-size: 2rem;
+            max-width: 700px;
+            color: #988829;
+        }
+
+        @media (max-width: 768px) {
+            .intro {
+                padding-top: 6.25rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .intro h1 {
+                font-size: 2.5rem;
+            }
+
+            .intro p {
+                font-size: 1.25rem;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        }
+
+        /* Social Media Panel */
+        .social-panel {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 20;
+        }
+
+        .social-panel a {
+            width: 160px;
+            height: 50px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: rgba(40, 46, 60, 0.8);
+            border: 2px solid #505c7c;
+            color: #fddf00;
+            text-decoration: none;
+            font-size: 1.125rem;
+            transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            padding-left: 15px;
+            transform: translateX(80px);
+        }
+
+        .social-panel a::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 2;
-        }
-
-        .hero * {
-            position: relative;
-            z-index: 3;
-        }
-
-        .hero h1 {
-            font-size: 40px;
-            margin-bottom: 20px;
-            animation: flicker 30s infinite;
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 100%;
-            margin-bottom: 40px;
-            color: #fddf00;
-        }
-
-        /* Flickering Animation */
-        @keyframes flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-                opacity: 1;
-            }
-            20%, 24%, 55% {
-                opacity: 0;
-            }
-        }
-
-        /* Social Links Panel in Hero Section */
-        .social-panel {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .social-panel a {
-            color: #fddf00;
-            font-size: 24px;
-            text-align: center;
-            transition: color 0.3s;
+            right: 0;
+            bottom: 0;
+            background: rgba(152, 136, 41, 0.2);
+            transform: scale(1.2);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
 
         .social-panel a:hover {
-            color: #ffffff;
+            background: #505c7c;
+            color: #fff;
+            transform: translateX(0);
+            box-shadow: 0px 0px 20px #505c7c;
         }
 
-        /* Sections */
-        .section {
-            padding: 60px 20px;
-            background: #121212;
-            color: #ffffff;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        .social-panel a:hover::before {
+            opacity: 1;
+            transform: scale(1);
         }
 
-        /* Grid Background */
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -50%;
-            width: 200%;
-            height: 100%;
-            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
-            pointer-events: none;
-            z-index: 1;
+        .social-panel a i {
+            margin-right: 10px;
         }
 
-        @keyframes gridMove {
-            from {
+        @media (max-width: 768px) {
+            .social-panel a {
+                width: 140px;
+                height: 45px;
+                font-size: 1rem;
+                transform: translateX(60px);
+            }
+
+            .social-panel a:hover {
                 transform: translateX(0);
             }
-
-            to {
-                transform: translateX(-50px);
-            }
         }
 
-        .section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section p {
-            font-size: 16px;
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-            color: #cccccc;
-        }
-
-        /* Card Styles for Projects and Skills */
-        .card-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        @media (min-width: 768px) {
-            .card-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .card-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .card {
-            background: rgba(30, 30, 30, 0.85);
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto;
-            text-align: left;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px #ffffff;
-        }
-
-        .card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            font-size: 16px;
-            color: #cccccc;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            max-width: 100%;
-            text-align: left;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            background: rgba(30, 30, 30, 0.8);
-            border: none;
-            color: #ffffff;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .contact-form button {
-            padding: 15px;
-            background: #fddf00;
-            border: none;
-            color: #000000;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        /* Bat GIF */
-        .bat-gif {
-            position: fixed;
-            width: 100px;
-            height: 100px;
-            bottom: 10px;
-            right: 10px;
-            z-index: 50;
-            animation: batFly 15s infinite ease-in-out;
-        }
-
-        @keyframes batFly {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-
-            50% {
-                transform: translate(-50vw, -50vh) rotate(360deg);
-            }
-
-            100% {
-                transform: translate(0, 0) rotate(720deg);
-            }
-        }
     </style>
 </head>
 
@@ -327,107 +279,40 @@
         <nav class="navbar">
             <div class="navbar-logo">Jas Sharma</div>
             <div class="navbar-toggle" @click="toggleMenu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
-            <ul class="navbar-menu" :class="{ 'active': menuActive }">
-                <li><a href="#home" @click="navigate('home')">Home</a></li>
-                <li><a href="#about" @click="navigate('about')">About</a></li>
-                <li><a href="#projects" @click="navigate('projects')">Projects</a></li>
-                <li><a href="#skills" @click="navigate('skills')">Skills</a></li>
-                <li><a href="#contact" @click="navigate('contact')">Contact</a></li>
+            <ul class="navbar-menu" :class="{ active: menuActive }">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <h1>I'm Jas Sharma</h1>
-            <p>"In a world of data chaos, I'm the engineer this city needs, not the one it deserves, harnessing AI to uncover hidden truths and drive the future."</p>
-
-            <!-- Social Media Panel -->
-            <div class="social-panel">
-                <a href="mailto:your-email@example.com" target="_blank">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/gyan-pg-ln" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
+        <!-- Intro Section -->
+        <section class="intro">
+            <h1>Jas Sharma</h1>
+            <p>"In a world full of data chaos, I am the engineer this city needs."</p>
         </section>
 
-        <!-- Bat GIF -->
-        <img src="https://i.gifer.com/ZVLJ.gif" class="bat-gif" alt="Bat Animation" />
-
-        <!-- About Section -->
-        <section class="section" id="about">
-            <h2>About Me</h2>
-            <p>I'm passionate about leveraging AI to solve complex problems. With a background in data engineering, I strive to make sense of data chaos and bring clarity to organizations.</p>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="section" id="projects">
-            <h2>Projects</h2>
-            <div class="card-container">
-                <!-- Project Card 1 -->
-                <div class="card">
-                    <h3>Project Title 1</h3>
-                    <p>A brief description of the project goes here. Highlight key features and technologies used.</p>
-                </div>
-                <!-- Project Card 2 -->
-                <div class="card">
-                    <h3>Project Title 2</h3>
-                    <p>A brief description of the project goes here. Highlight key features and technologies used.</p>
-                </div>
-                <!-- Project Card 3 -->
-                <div class="card">
-                    <h3>Project Title 3</h3>
-                    <p>A brief description of the project goes here. Highlight key features and technologies used.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section class="section" id="skills">
-            <h2>Skills</h2>
-            <div class="card-container">
-                <!-- Skill Card 1 -->
-                <div class="card">
-                    <h3>Python</h3>
-                    <p>Experienced in Python programming for data analysis, machine learning, and web development.</p>
-                </div>
-                <!-- Skill Card 2 -->
-                <div class="card">
-                    <h3>Machine Learning</h3>
-                    <p>Proficient in building predictive models using TensorFlow, scikit-learn, and other ML frameworks.</p>
-                </div>
-                <!-- Skill Card 3 -->
-                <div class="card">
-                    <h3>Data Engineering</h3>
-                    <p>Skilled in designing data pipelines, ETL processes, and database management.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="section" id="contact">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out for collaborations or just a friendly chat about AI and technology.</p>
-            <div class="contact-form">
-                <form action="#" method="post">
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    <input type="email" name="email" placeholder="Your Email" required />
-                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </section>
+        <!-- Social Media Panel -->
+        <div class="social-panel">
+            <a href="mailto:jas@example.com" target="_blank">
+                <i class="fas fa-envelope"></i>Email Me
+            </a>
+            <a href="https://www.linkedin.com/in/jas-sharma" target="_blank">
+                <i class="fab fa-linkedin"></i>LinkedIn
+            </a>
+            <a href="https://github.com/jas-sharma" target="_blank">
+                <i class="fab fa-github"></i>GitHub
+            </a>
+        </div>
     </div>
 
-    <!-- Vue.js and JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <!-- Vue.js Script -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script>
-        // Vue instance
         new Vue({
             el: '#app',
             data: {
@@ -436,13 +321,6 @@
             methods: {
                 toggleMenu() {
                     this.menuActive = !this.menuActive;
-                },
-                navigate(sectionId) {
-                    this.menuActive = false;
-                    const section = document.getElementById(sectionId);
-                    if (section) {
-                        section.scrollIntoView({ behavior: 'smooth' });
-                    }
                 }
             }
         });

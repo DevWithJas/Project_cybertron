@@ -21,21 +21,7 @@
         body {
             font-family: 'Orbitron', sans-serif;
             color: #ffffff;
-            /* Updated background image URL */
-            background: url('C:/Users/JAS/Downloads/pexels-daniel-olivier-578240085-17860200.jpg') no-repeat center center fixed;
-            background-size: cover;
             overflow-x: hidden;
-        }
-
-        /* Overlay */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: -1;
         }
 
         /* Navbar Styles */
@@ -166,21 +152,9 @@
             padding: 0 20px;
             color: #ffffff;
             position: relative;
-        }
-
-        .hero h1 {
-            font-size: 64px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .hero p {
-            font-size: 24px;
-            max-width: 800px;
-            margin-bottom: 40px;
-            color: #fddf00;
-            line-height: 1.5;
+            background: url('C:/Users/JAS/Downloads/pexels-daniel-olivier-578240085-17860200.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: 0;
         }
 
         /* Animated Background Lines */
@@ -196,6 +170,7 @@
             background-repeat: repeat-y;
             animation: moveLines 10s linear infinite;
             pointer-events: none;
+            z-index: 1;
         }
 
         @keyframes moveLines {
@@ -206,6 +181,38 @@
             100% {
                 transform: translateX(-33.33%);
             }
+        }
+
+        /* Overlay */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2;
+        }
+
+        .hero * {
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            max-width: 800px;
+            margin-bottom: 40px;
+            color: #fddf00;
+            line-height: 1.5;
         }
 
         .hero .social-links {
@@ -431,13 +438,6 @@
             .card {
                 width: 90%;
             }
-
-            /* Override background-attachment on mobile devices */
-            body {
-                background-attachment: scroll;
-                background-position: center;
-                background-size: cover;
-            }
         }
 
         /* Additional Media Queries for Enhanced Responsiveness */
@@ -499,9 +499,6 @@
 
 <body>
     <div id="app">
-        <!-- Overlay -->
-        <div class="overlay"></div>
-
         <!-- Navbar -->
         <nav class="navbar" :class="{ 'scrolled': scrolled }">
             <div class="navbar-logo" @click="goHome">Jas Sharma</div>
@@ -522,8 +519,7 @@
         <!-- Hero Section -->
         <section class="hero" id="home">
             <h1>I'm Jas Sharma</h1>
-            <p>"In a world of data chaos, I'm the engineer this city needs, not the one it deserves, harnessing AI
-                to uncover hidden truths and drive the future."</p>
+            <p>"In a world of data chaos, I'm the engineer this city needs, not the one it deserves, harnessing AI to uncover hidden truths and drive the future."</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/gyan-pg-ln" target="_blank">
                     <i class="fab fa-linkedin"></i>
@@ -642,6 +638,7 @@
 </body>
 
 </html>
+
 
 
 

@@ -263,6 +263,31 @@
             border-radius: 5px;
             width: 100%;
         }
+
+        /* Bat GIF */
+        .bat-gif {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            bottom: 10px;
+            right: 10px;
+            z-index: 50;
+            animation: batFly 15s infinite ease-in-out;
+        }
+
+        @keyframes batFly {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-50vw, -50vh) rotate(360deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(720deg);
+            }
+        }
     </style>
 </head>
 
@@ -290,6 +315,9 @@
             <h1>I'm Jas Sharma</h1>
             <p>"In a world of data chaos, I'm the engineer this city needs, not the one it deserves, harnessing AI to uncover hidden truths and drive the future."</p>
         </section>
+
+        <!-- Bat GIF -->
+        <img src="https://i.gifer.com/ZVLJ.gif" class="bat-gif" alt="Bat Animation" />
 
         <!-- About Section -->
         <section class="section" id="about">
@@ -382,4 +410,5 @@
 </body>
 
 </html>
+
 

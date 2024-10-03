@@ -163,6 +163,45 @@
             color: #ffffff;
         }
 
+        /* New Social Media Panel (Fixed, Right) */
+        .fixed-social-panel {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 20;
+        }
+
+        .fixed-social-panel a {
+            width: 160px;
+            height: 50px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: rgba(40, 46, 60, 0.8);
+            border: 2px solid #505c7c;
+            color: #fddf00;
+            text-decoration: none;
+            font-size: 1.125rem;
+            transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+            padding-left: 15px;
+            transform: translateX(80px);
+        }
+
+        .fixed-social-panel a:hover {
+            background: #505c7c;
+            color: #ffffff;
+            transform: translateX(0);
+            box-shadow: 0px 0px 20px #505c7c;
+        }
+
+        .fixed-social-panel a i {
+            margin-right: 10px;
+        }
+
         /* Sections */
         .section {
             padding: 60px 20px;
@@ -356,6 +395,19 @@
             </div>
         </section>
 
+        <!-- New Fixed Social Media Panel (On the Right) -->
+        <div class="fixed-social-panel">
+            <a href="mailto:your-email@example.com">
+                <i class="fas fa-envelope"></i>Email Me
+            </a>
+            <a href="https://www.linkedin.com/in/gyan-pg-ln">
+                <i class="fab fa-linkedin"></i>LinkedIn
+            </a>
+            <a href="https://github.com/jas-sharma">
+                <i class="fab fa-github"></i>GitHub
+            </a>
+        </div>
+
         <!-- Bat GIF -->
         <img src="https://i.gifer.com/ZVLJ.gif" class="bat-gif" alt="Bat Animation" />
 
@@ -450,3 +502,4 @@
 </body>
 
 </html>
+

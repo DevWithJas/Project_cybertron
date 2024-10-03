@@ -21,114 +21,63 @@
         body {
             font-family: 'Orbitron', sans-serif;
             color: #ffffff;
+            background-color: #121212;
             overflow-x: hidden;
         }
 
         /* Navbar Styles */
         .navbar {
             width: 100%;
-            padding: 20px 40px;
+            padding: 20px;
             position: fixed;
             top: 0;
             left: 0;
-            background: transparent;
+            background: rgba(0, 0, 0, 0.8);
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .navbar.scrolled {
-            background: rgba(0, 0, 0, 0.8);
-            transition: background 0.3s;
-        }
-
         .navbar-logo {
             color: #fddf00;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             cursor: pointer;
-            /* Flicker effect */
-            animation: flicker 3s infinite;
-        }
-
-        @keyframes flicker {
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            10% {
-                opacity: 0.8;
-            }
-
-            20% {
-                opacity: 0.6;
-            }
-
-            30% {
-                opacity: 0.4;
-            }
-
-            40% {
-                opacity: 0.2;
-            }
-
-            50% {
-                opacity: 0;
-            }
-
-            60% {
-                opacity: 0.2;
-            }
-
-            70% {
-                opacity: 0.4;
-            }
-
-            80% {
-                opacity: 0.6;
-            }
-
-            90% {
-                opacity: 0.8;
-            }
         }
 
         .navbar-menu {
             list-style: none;
             display: flex;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            justify-content: center;
+            transition: right 0.3s ease;
+            z-index: 999;
+        }
+
+        .navbar-menu.active {
+            right: 0;
         }
 
         .navbar-menu li {
-            margin-left: 30px;
+            margin: 20px 0;
         }
 
         .navbar-menu a {
             color: #fddf00;
             text-decoration: none;
             font-size: 18px;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .navbar-menu a::after {
-            content: '';
-            position: absolute;
-            width: 0%;
-            height: 2px;
-            background: #fddf00;
-            left: 0;
-            bottom: -5px;
-            transition: width 0.3s;
-        }
-
-        .navbar-menu a:hover::after {
-            width: 100%;
         }
 
         .navbar-toggle {
-            display: none;
+            display: flex;
             flex-direction: column;
             cursor: pointer;
         }
@@ -149,41 +98,13 @@
             align-items: center;
             text-align: center;
             min-height: 100vh;
-            padding: 0 20px;
+            padding: 20px;
             color: #ffffff;
-            position: relative;
             background: url('https://raw.githubusercontent.com/DevWithJas/Project_cybertron/7a10b4077b8dcad0cd1c048483ed099f9d7b043b/pexels-daniel-olivier-578240085-17860200.jpg') no-repeat center center;
             background-size: cover;
-            z-index: 0;
+            position: relative;
         }
 
-        /* Animated Background Lines */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -150px;
-            width: 300%;
-            height: 100%;
-            background: linear-gradient(transparent, rgba(255, 223, 0, 0.2) 50%, transparent);
-            background-size: 100% 2px;
-            background-repeat: repeat-y;
-            animation: moveLines 10s linear infinite;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        @keyframes moveLines {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-33.33%);
-            }
-        }
-
-        /* Overlay */
         .hero::after {
             content: '';
             position: absolute;
@@ -201,161 +122,86 @@
         }
 
         .hero h1 {
-            font-size: 64px;
+            font-size: 32px;
             margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         .hero p {
-            font-size: 24px;
-            max-width: 800px;
+            font-size: 16px;
+            max-width: 100%;
             margin-bottom: 40px;
             color: #fddf00;
-            line-height: 1.5;
         }
 
-        .hero .social-links {
+        .social-links {
             display: flex;
             gap: 20px;
         }
 
-        .hero .social-links a {
+        .social-links a {
             color: #fddf00;
-            font-size: 32px;
+            font-size: 24px;
             transition: color 0.3s;
         }
 
-        .hero .social-links a:hover {
+        .social-links a:hover {
             color: #ffffff;
         }
 
-        /* Content Sections */
+        /* Sections */
         .section {
-            padding: 100px 20px;
+            padding: 60px 20px;
             background: #121212;
             color: #ffffff;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Futuristic Grid Background */
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -50%;
-            width: 200%;
-            height: 100%;
-            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes gridMove {
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50px);
-            }
         }
 
         .section h2 {
-            font-size: 48px;
-            margin-bottom: 40px;
+            font-size: 28px;
+            margin-bottom: 20px;
             position: relative;
             display: inline-block;
         }
 
-        .section h2::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 2px;
-            background: #ffffff;
-            left: 25%;
-            bottom: -10px;
-        }
-
         .section p {
-            font-size: 20px;
-            max-width: 800px;
-            margin: 0 auto 60px auto;
+            font-size: 14px;
+            max-width: 100%;
+            margin: 0 auto 30px auto;
             color: #cccccc;
-            line-height: 1.6;
         }
 
-        /* Cards for Projects and Skills */
+        /* Card Styles for Projects and Skills */
         .card-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
         }
 
         .card {
             background: rgba(30, 30, 30, 0.85);
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
-            width: 300px;
+            width: 100%;
+            max-width: 300px;
             text-align: left;
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(5px);
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: rotateCard 5s linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes rotateCard {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px #ffffff;
         }
 
         .card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #ffffff;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            font-size: 20px;
+            margin-bottom: 10px;
         }
 
         .card p {
-            font-size: 16px;
+            font-size: 14px;
             color: #cccccc;
-            line-height: 1.4;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         /* Contact Form */
         .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 100%;
             text-align: left;
+            margin: 0 auto;
         }
 
         .contact-form input,
@@ -367,116 +213,27 @@
             border: none;
             color: #ffffff;
             border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: #888888;
+            font-size: 14px;
         }
 
         .contact-form button {
-            padding: 15px 30px;
+            padding: 15px;
             background: #fddf00;
             border: none;
             color: #000000;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
             border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .contact-form button:hover {
-            background: #ffffff;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.95);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: right 0.3s ease;
-                z-index: 999;
-            }
-
-            .navbar-menu.active {
-                right: 0;
-            }
-
-            .navbar-menu li {
-                margin: 20px 0;
-            }
-
-            .navbar-toggle {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .section h2 {
-                font-size: 36px;
-            }
-
-            .card-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .card {
-                width: 90%;
-            }
-        }
-
-        /* Additional Media Queries for Enhanced Responsiveness */
-        @media (max-width: 480px) {
-            .bat-gif {
-                width: 100px;
-                height: 100px;
-                bottom: 10px;
-                right: 10px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .section {
-                padding: 60px 20px;
-            }
-
-            .card-container {
-                gap: 20px;
-            }
-
-            .card {
-                padding: 20px;
-            }
+            width: 100%;
         }
 
         /* Bat GIF */
         .bat-gif {
             position: fixed;
-            width: 200px;
-            height: 200px;
-            bottom: 20px;
-            right: 20px;
+            width: 100px;
+            height: 100px;
+            bottom: 10px;
+            right: 10px;
             z-index: 50;
             animation: batFly 15s infinite ease-in-out;
         }
@@ -500,8 +257,8 @@
 <body>
     <div id="app">
         <!-- Navbar -->
-        <nav class="navbar" :class="{ 'scrolled': scrolled }">
-            <div class="navbar-logo" @click="goHome">Jas Sharma</div>
+        <nav class="navbar">
+            <div class="navbar-logo">Jas Sharma</div>
             <div class="navbar-toggle" @click="toggleMenu">
                 <span></span>
                 <span></span>
@@ -536,8 +293,7 @@
         <!-- About Section -->
         <section class="section" id="about">
             <h2>About Me</h2>
-            <p>I'm passionate about leveraging AI to solve complex problems. With a background in data engineering, I strive
-                to make sense of data chaos and bring clarity to organizations.</p>
+            <p>I'm passionate about leveraging AI to solve complex problems. With a background in data engineering, I strive to make sense of data chaos and bring clarity to organizations.</p>
         </section>
 
         <!-- Projects Section -->
@@ -607,7 +363,6 @@
             el: '#app',
             data: {
                 menuActive: false,
-                scrolled: false
             },
             methods: {
                 toggleMenu() {
@@ -619,23 +374,10 @@
                     if (section) {
                         section.scrollIntoView({ behavior: 'smooth' });
                     }
-                },
-                goHome() {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                },
-                handleScroll() {
-                    this.scrolled = window.scrollY > 50;
                 }
-            },
-            mounted() {
-                window.addEventListener('scroll', this.handleScroll);
-            },
-            beforeDestroy() {
-                window.removeEventListener('scroll', this.handleScroll);
             }
         });
     </script>
 </body>
 
 </html>
-

@@ -133,32 +133,6 @@
             color: #fddf00;
         }
 
-        /* Futuristic Social Links Panel */
-        .social-panel {
-            position: fixed;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            border-radius: 0 10px 10px 0;
-            z-index: 999;
-        }
-
-        .social-panel a {
-            color: #fddf00;
-            font-size: 24px;
-            text-align: center;
-            transition: color 0.3s;
-        }
-
-        .social-panel a:hover {
-            color: #ffffff;
-        }
-
         /* Sections */
         .section {
             padding: 60px 20px;
@@ -167,32 +141,6 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        /* Grid Background */
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -50%;
-            width: 200%;
-            height: 100%;
-            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        @keyframes gridMove {
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50px);
-            }
         }
 
         .section h2 {
@@ -289,31 +237,6 @@
             border-radius: 5px;
             width: 100%;
         }
-
-        /* Bat GIF */
-        .bat-gif {
-            position: fixed;
-            width: 100px;
-            height: 100px;
-            bottom: 10px;
-            right: 10px;
-            z-index: 50;
-            animation: batFly 15s infinite ease-in-out;
-        }
-
-        @keyframes batFly {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-
-            50% {
-                transform: translate(-50vw, -50vh) rotate(360deg);
-            }
-
-            100% {
-                transform: translate(0, 0) rotate(720deg);
-            }
-        }
     </style>
 </head>
 
@@ -341,19 +264,6 @@
             <h1>I'm Jas Sharma</h1>
             <p>"In a world of data chaos, I'm the engineer this city needs, not the one it deserves, harnessing AI to uncover hidden truths and drive the future."</p>
         </section>
-
-        <!-- Futuristic Social Links Panel -->
-        <div class="social-panel">
-            <a href="mailto:your-email@example.com" target="_blank">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/gyan-pg-ln" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
-
-        <!-- Bat GIF -->
-        <img src="https://i.gifer.com/ZVLJ.gif" class="bat-gif" alt="Bat Animation" />
 
         <!-- About Section -->
         <section class="section" id="about">
@@ -439,23 +349,10 @@
                     if (section) {
                         section.scrollIntoView({ behavior: 'smooth' });
                     }
-                },
-                closeNavbarOutsideClick(event) {
-                    if (!event.target.closest('.navbar-menu') && this.menuActive) {
-                        this.menuActive = false;
-                    }
                 }
-            },
-            mounted() {
-                document.addEventListener('click', this.closeNavbarOutsideClick);
-            },
-            beforeDestroy() {
-                document.removeEventListener('click', this.closeNavbarOutsideClick);
             }
         });
     </script>
 </body>
 
 </html>
-
-

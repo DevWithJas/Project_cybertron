@@ -143,6 +143,32 @@
             overflow: hidden;
         }
 
+        /* Grid Background */
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes gridMove {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50px);
+            }
+        }
+
         .section h2 {
             font-size: 36px;
             margin-bottom: 20px;
@@ -356,3 +382,4 @@
 </body>
 
 </html>
+

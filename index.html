@@ -338,6 +338,55 @@
             color: #fddf00;
         }
 
+        /* Card Styles for Projects and Skills */
+        .card-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (min-width: 768px) {
+            .card-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .card-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .card {
+            background: rgba(30, 30, 30, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px #ffffff;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #cccccc;
+        }
+
         /* Contact Form */
         .contact-form {
             max-width: 100%;

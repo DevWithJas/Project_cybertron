@@ -2,13 +2,17 @@
 <html lang="en">
 
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jas Sharma - Portfolio</title>
+
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
+
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
     <style>
         /* General Styles */
         * {
@@ -157,11 +161,20 @@
 
         /* Flickering Animation */
         @keyframes flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
                 opacity: 1;
             }
 
-            20%, 24%, 55% {
+            20%,
+            24%,
+            55% {
                 opacity: 0;
             }
         }
@@ -208,20 +221,42 @@
             color: #fddf00;
             text-decoration: none;
             font-size: 1.125rem;
-            transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
             padding-left: 15px;
-            transform: translateX(80px);
         }
 
         .fixed-social-panel a:hover {
             background: #505c7c;
             color: #ffffff;
-            transform: translateX(0);
             box-shadow: 0px 0px 20px #505c7c;
         }
 
         .fixed-social-panel a i {
             margin-right: 10px;
+        }
+
+        /* Chatbot Button */
+        .chatbot-button {
+            width: 50px;
+            height: 50px;
+            background: #fddf00;
+            border: 2px solid #505c7c;
+            color: #121212;
+            font-size: 24px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .chatbot-button:hover {
+            background: #ffffff;
+            color: #121212;
+            box-shadow: 0px 0px 20px #fddf00;
         }
 
         /* Sections */
@@ -443,6 +478,109 @@
                 transform: translate(0, 0) rotate(720deg);
             }
         }
+
+        /* Chatbot Container */
+        .chatbot-container {
+            position: fixed;
+            bottom: 0;
+            right: 20px;
+            width: 600px;
+            max-height: 800px;
+            background: rgba(30, 30, 30, 0.95);
+            border: 2px solid #505c7c;
+            border-radius: 10px 10px 0 0;
+            overflow: hidden;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            z-index: 1001;
+        }
+
+        .chatbot-container.active {
+            transform: translateY(0);
+        }
+
+        .chatbot-header {
+            background: #505c7c;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h3 {
+            font-size: 18px;
+            color: #fddf00;
+            margin: 0;
+        }
+
+        .chatbot-close-button {
+            background: none;
+            border: none;
+            color: #fddf00;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background: #121212;
+        }
+
+        .message {
+            margin-bottom: 10px;
+        }
+
+        .message-user p,
+        .message-bot p {
+            background: #505c7c;
+            color: #fddf00;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 80%;
+        }
+
+        .message-user p {
+            background: #fddf00;
+            color: #121212;
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .message-bot p {
+            background: #505c7c;
+            color: #fddf00;
+            align-self: flex-start;
+        }
+
+        .chatbot-input {
+            padding: 10px;
+            background: #505c7c;
+            display: flex;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: #121212;
+            color: #ffffff;
+            border-radius: 5px 0 0 5px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .chatbot-input button {
+            padding: 10px;
+            background: #fddf00;
+            border: none;
+            color: #121212;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            font-family: 'Orbitron', sans-serif;
+        }
     </style>
 </head>
 
@@ -492,6 +630,10 @@
             <a href="https://github.com/DevWithJas">
                 <i class="fab fa-github"></i>GitHub
             </a>
+            <!-- Chatbot Button -->
+            <div class="chatbot-button" @click="toggleChatbot">
+                <i class="fas fa-moon"></i>
+            </div>
         </div>
 
         <!-- Bat GIF -->
@@ -599,6 +741,26 @@
                 </form>
             </div>
         </section>
+
+        <!-- Chatbot Container -->
+        <div class="chatbot-container" :class="{ 'active': chatbotActive }">
+            <div class="chatbot-header">
+                <h3>Chatbot</h3>
+                <button @click="toggleChatbot" class="chatbot-close-button">&times;</button>
+            </div>
+            <div class="chatbot-messages">
+                <div class="message" v-for="message in messages">
+                    <div :class="'message-' + message.sender">
+                        <p>{{ message.text }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" v-model="userMessage" @keyup.enter="sendMessage" placeholder="Type your message..." />
+                <button @click="sendMessage">Send</button>
+            </div>
+        </div>
+
     </div>
 
     <!-- Vue.js and JavaScript -->
@@ -609,6 +771,9 @@
             el: '#app',
             data: {
                 menuActive: false,
+                chatbotActive: false,
+                messages: [],
+                userMessage: '',
             },
             methods: {
                 toggleMenu() {
@@ -620,7 +785,31 @@
                     if (section) {
                         section.scrollIntoView({ behavior: 'smooth' });
                     }
-                }
+                },
+                toggleChatbot() {
+                    this.chatbotActive = !this.chatbotActive;
+                    if (this.chatbotActive && this.messages.length === 0) {
+                        // Add initial greeting message
+                        this.messages.push({ sender: 'bot', text: 'Hello! How can I assist you today?' });
+                    }
+                },
+                sendMessage() {
+                    if (this.userMessage.trim() !== '') {
+                        // Add user's message to messages
+                        this.messages.push({ sender: 'user', text: this.userMessage });
+                        // Simulate bot response
+                        this.botResponse(this.userMessage);
+                        // Clear the input
+                        this.userMessage = '';
+                    }
+                },
+                botResponse(userMessage) {
+                    // For simplicity, we'll just echo the user's message
+                    // In a real implementation, you'd have a backend API to get responses
+                    setTimeout(() => {
+                        this.messages.push({ sender: 'bot', text: 'You said: ' + userMessage });
+                    }, 1000);
+                },
             }
         });
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +52,12 @@
             position: relative;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 1rem;
@@ -204,7 +210,9 @@
             box-shadow: 0 6px 8px var(--shadow);
         }
 
-        .about::before, .tech-focus::before, .drive::before {
+        .about::before,
+        .tech-focus::before,
+        .drive::before {
             content: '';
             position: absolute;
             top: 0;
@@ -232,17 +240,22 @@
             border-radius: 2px;
         }
 
-        .values, .contact {
+        .values,
+        .contact {
             background-color: var(--card-bg);
         }
 
-        .values-container, .tech-container, .contact-container {
+        .values-container,
+        .tech-container,
+        .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
-        .value-card, .tech-card, .contact-card {
+        .value-card,
+        .tech-card,
+        .contact-card {
             background: var(--bg);
             border-radius: 12px;
             padding: 2rem;
@@ -251,17 +264,21 @@
             border: 1px solid var(--border);
         }
 
-        .value-card:hover, .tech-card:hover, .contact-card:hover {
+        .value-card:hover,
+        .tech-card:hover,
+        .contact-card:hover {
             transform: translateY(-5px);
         }
 
-        .value-icon, .contact-icon {
+        .value-icon,
+        .contact-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
             color: var(--primary);
         }
 
-        .value-title, .contact-title {
+        .value-title,
+        .contact-title {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
         }
@@ -376,6 +393,8 @@
             cursor: pointer;
         }
 
+       
+
         @media (max-width: 768px) {
             .mobile-toggle {
                 display: block;
@@ -411,6 +430,7 @@
             .canvas-container {
                 height: 150px;
             }
+
         }
 
         .fade-in {
@@ -422,13 +442,25 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .typing::after {
@@ -439,11 +471,19 @@
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
+
 <body class="dark-mode">
     <header>
         <div class="container header-container">
@@ -454,11 +494,16 @@
                 <i class="fas fa-bars"></i>
             </button>
             <nav class="nav-links" id="navLinks">
-                <a href="#about" class="nav-link animate__animated animate__fadeIn" style="animation-delay: 0.1s;">About</a>
-                <a href="#values" class="nav-link animate__animated animate__fadeIn" style="animation-delay: 0.2s;">Values</a>
-                <a href="#tech-focus" class="nav-link animate__animated animate__fadeIn" style="animation-delay: 0.3s;">Tech</a>
-                <a href="#drive" class="nav-link animate__animated animate__fadeIn" style="animation-delay: 0.4s;">Drive</a>
-                <a href="#contact" class="nav-link animate__animated animate__fadeIn" style="animation-delay: 0.5s;">Contact</a>
+                <a href="#about" class="nav-link animate__animated animate__fadeIn"
+                    style="animation-delay: 0.1s;">About</a>
+                <a href="#values" class="nav-link animate__animated animate__fadeIn"
+                    style="animation-delay: 0.2s;">Values</a>
+                <a href="#tech-focus" class="nav-link animate__animated animate__fadeIn"
+                    style="animation-delay: 0.3s;">Tech</a>
+                <a href="#drive" class="nav-link animate__animated animate__fadeIn"
+                    style="animation-delay: 0.4s;">Drive</a>
+                <a href="#contact" class="nav-link animate__animated animate__fadeIn"
+                    style="animation-delay: 0.5s;">Contact</a>
             </nav>
         </div>
     </header>
@@ -472,7 +517,8 @@
                         <span id="typingText">Founder. Technologist. Committed to Safer Cities.</span>
                     </h3>
                     <p class="animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
-                        I build systems that serve public safety. With a focus on deep learning and real-world applications, 
+                        I build systems that serve public safety. With a focus on deep learning and real-world
+                        applications,
                         my work is about enabling smarter decisions for the environments we all move through.
                     </p>
                     <div class="canvas-container" data-aos="fade-up" data-aos-delay="600">
@@ -497,21 +543,21 @@
             <div class="container" data-aos="fade-up">
                 <h2 class="section-title">🧠 About Me</h2>
                 <p>
-                    I'm Jas — a final-year B.Tech student in Automation & Robotics and the founder of a 
-                    safety-focused tech initiative. My work lies in designing and building intelligent systems 
+                    I'm Jas — a final-year B.Tech student in Automation & Robotics and the founder of a
+                    safety-focused tech initiative. My work lies in designing and building intelligent systems
                     that understand risk, reduce uncertainty, and make urban spaces safer for all of us.
                 </p>
                 <p>
-                    I care about execution — about turning abstract ideas into tools that actually work, 
+                    I care about execution — about turning abstract ideas into tools that actually work,
                     under pressure, and at scale.
                 </p>
                 <p>
                     For me, safety isn't just a domain — it's a responsibility.
                 </p>
                 <p>
-                    My journey began with a fascination for how technology can solve real-world problems. 
-                    Over the years, I've worked on projects ranging from real-time traffic analysis to 
-                    predictive crime mapping, always with a focus on practical impact. I'm driven by the 
+                    My journey began with a fascination for how technology can solve real-world problems.
+                    Over the years, I've worked on projects ranging from real-time traffic analysis to
+                    predictive crime mapping, always with a focus on practical impact. I'm driven by the
                     challenge of balancing technical complexity with user-centric design.
                 </p>
                 <div class="canvas-container" data-aos="fade-up" data-aos-delay="100">
@@ -523,8 +569,8 @@
         <section class="values" id="values">
             <div class="container" data-aos="fade-up">
                 <h2 class="section-title">⚙️ What I Stand For</h2>
-                <p>We all deserve to live, move, and exist in environments that are secure, intelligent, and responsive. 
-                   I build to support that belief — with code, clarity, and intent.</p>
+                <p>We all deserve to live, move, and exist in environments that are secure, intelligent, and responsive.
+                    I build to support that belief — with code, clarity, and intent.</p>
                 <p>My work is grounded in:</p>
                 <div class="canvas-container" data-aos="fade-up" data-aos-delay="100">
                     <canvas id="explainableAI"></canvas>
@@ -533,7 +579,8 @@
                     <div class="value-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="value-icon"><i class="fas fa-brain"></i></div>
                         <h3 class="value-title">Deep Learning as a backbone</h3>
-                        <p>Not just a tool, but the engine that powers understanding and prediction in complex environments.</p>
+                        <p>Not just a tool, but the engine that powers understanding and prediction in complex
+                            environments.</p>
                     </div>
                     <div class="value-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="value-icon"><i class="fas fa-sitemap"></i></div>
@@ -559,12 +606,14 @@
             </div>
         </section>
 
+
         <section class="tech-focus" id="tech-focus">
             <div class="container" data-aos="fade-up">
                 <h2 class="section-title">🤖 Tech Focus</h2>
                 <p>
-                    My work revolves around harnessing AI and data to create safer urban environments. 
-                    From neural networks that learn patterns to graphs that reveal insights, I build tools that think and adapt.
+                    My work revolves around harnessing AI and data to create safer urban environments.
+                    From neural networks that learn patterns to graphs that reveal insights, I build tools that think
+                    and adapt.
                 </p>
                 <div class="tech-container">
                     <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
@@ -603,18 +652,19 @@
             <div class="container" data-aos="fade-up">
                 <h2 class="section-title">🛠️ What Drives Me</h2>
                 <p>
-                    I'm not here to chase headlines or MVPs with vanity. I'm here to solve problems that matter — 
+                    I'm not here to chase headlines or MVPs with vanity. I'm here to solve problems that matter —
                     where the cost of inaction is human.
                 </p>
                 <p>
-                    When we talk about safety, we're not talking about stats — we're talking about lives, 
+                    When we talk about safety, we're not talking about stats — we're talking about lives,
                     neighborhoods, late-night walks, and trust in the systems around us.
                 </p>
                 <p>
                     That's where I focus my effort.
                 </p>
                 <p>
-                    My drive comes from a belief that technology, when applied thoughtfully, can rebuild trust in our shared spaces.
+                    My drive comes from a belief that technology, when applied thoughtfully, can rebuild trust in our
+                    shared spaces.
                 </p>
                 <div class="canvas-container" data-aos="fade-up" data-aos-delay="100">
                     <canvas id="rlAnimation"></canvas>
@@ -626,7 +676,8 @@
             <div class="container" data-aos="fade-up">
                 <h2 class="section-title">📬 Reach Out</h2>
                 <p>
-                    If you're thinking deeply about safety, systems, or purpose-built tech — I'm open to meaningful conversations.
+                    If you're thinking deeply about safety, systems, or purpose-built tech — I'm open to meaningful
+                    conversations.
                 </p>
                 <div class="canvas-container" data-aos="fade-up" data-aos-delay="100">
                     <canvas id="flowingParticles"></canvas>
@@ -640,17 +691,20 @@
                     <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
                         <h3 class="contact-title">LinkedIn</h3>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">linkedin.com/in/yourprofile</a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank"
+                            class="contact-link">linkedin.com/in/yourprofile</a>
                     </div>
                     <div class="contact-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="contact-icon"><i class="fab fa-github"></i></div>
                         <h3 class="contact-title">GitHub</h3>
-                        <a href="https://github.com/yourusername" target="_blank" class="contact-link">github.com/yourusername</a>
+                        <a href="https://github.com/yourusername" target="_blank"
+                            class="contact-link">github.com/yourusername</a>
                     </div>
                     <div class="contact-card" data-aos="fade-up" data-aos-delay="500">
                         <div class="contact-icon"><i class="fab fa-twitter"></i></div>
                         <h3 class="contact-title">Twitter</h3>
-                        <a href="https://twitter.com/yourhandle" target="_blank" class="contact-link">twitter.com/yourhandle</a>
+                        <a href="https://twitter.com/yourhandle" target="_blank"
+                            class="contact-link">twitter.com/yourhandle</a>
                     </div>
                 </div>
             </div>
@@ -739,7 +793,7 @@
         }, 1000);
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
@@ -790,7 +844,306 @@
             canvas.height = canvas.parentElement.clientHeight;
         }
 
-        // Animations
+        // Utility to initialize canvas
+        function initCanvas(canvasId, height = 200) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return null;
+            const ctx = canvas.getContext('2d');
+            function resize() {
+                canvas.width = canvas.parentElement.clientWidth;
+                canvas.height = height;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+            return { canvas, ctx };
+        }
+
+        // Progress: Dual-Color Line Chart (replacing rlAnimation)
+        function initProgress(canvas) {
+            const setup = initCanvas(canvas.id, 200);
+            if (!setup) return;
+            const { canvas: progCanvas, ctx: progCtx } = setup;
+            const primary = getThemeColor('--primary');
+            let time = 0;
+            function animateLineChart() {
+                progCtx.clearRect(0, 0, progCanvas.width, progCanvas.height);
+                progCtx.beginPath();
+                for (let x = 0; x < progCanvas.width; x++) {
+                    const y1 = progCanvas.height / 2 + Math.sin(x * 0.02 + time) * 50;
+                    progCtx.lineTo(x, y1);
+                }
+                progCtx.strokeStyle = `rgb(${primary.r}, ${primary.g}, ${primary.b})`;
+                progCtx.lineWidth = 3;
+                progCtx.stroke();
+                progCtx.beginPath();
+                for (let x = 0; x < progCanvas.width; x++) {
+                    const y2 = progCanvas.height / 2 + Math.cos(x * 0.015 + time) * 60;
+                    progCtx.lineTo(x, y2);
+                }
+                progCtx.strokeStyle = `rgba(${primary.r}, ${primary.g}, ${primary.b}, 0.5)`;
+                progCtx.lineWidth = 2;
+                progCtx.stroke();
+                progCtx.fillStyle = 'white';
+                progCtx.font = '16px Inter';
+                progCtx.fillText('Progress', 10, 20);
+                time += 0.05;
+                requestAnimationFrame(animateLineChart);
+            }
+            animateLineChart();
+        }
+
+        // Career: CNN Layers (replacing spatioTemporalGNN)
+        function initCNNLayers(canvas) {
+            const setup = initCanvas(canvas.id, 200);
+            if (!setup) return;
+            const { canvas: carCanvas, ctx: carCtx } = setup;
+            const primary = getThemeColor('--primary');
+            const layers = [5, 3, 1];
+            let pulse = 0;
+            function animateCNN() {
+                carCtx.clearRect(0, 0, carCanvas.width, carCanvas.height);
+                layers.forEach((size, i) => {
+                    const x = (i + 1) * carCanvas.width / (layers.length + 1);
+                    for (let j = 0; j < size; j++) {
+                        const y = (j + 1) * carCanvas.height / (size + 1);
+                        carCtx.beginPath();
+                        carCtx.rect(x - 20, y - 20, 40, 40);
+                        carCtx.strokeStyle = `rgba(${primary.r}, ${primary.g}, ${primary.b}, ${Math.sin(pulse + i) * 0.5 + 0.5})`;
+                        carCtx.lineWidth = 2;
+                        carCtx.stroke();
+                        if (i < layers.length - 1) {
+                            for (let k = 0; k < layers[i + 1]; k++) {
+                                const nextY = (k + 1) * carCanvas.height / (layers[i + 1] + 1);
+                                carCtx.beginPath();
+                                carCtx.moveTo(x + 20, y);
+                                carCtx.lineTo(x + carCanvas.width / (layers.length + 1) - 20, nextY);
+                                carCtx.strokeStyle = `rgba(${primary.r}, ${primary.g}, ${primary.b}, 0.3)`;
+                                carCtx.lineWidth = 1;
+                                carCtx.stroke();
+                            }
+                        }
+                    }
+                });
+                carCtx.fillStyle = 'white';
+                carCtx.font = '16px Inter';
+                carCtx.fillText('AI Layers', 10, 20);
+                pulse += 0.05;
+                requestAnimationFrame(animateCNN);
+            }
+            animateCNN();
+        }
+
+        // Solutions: Multiple animations with selector (replacing explainableAI)
+        function initSolutions(canvas) {
+            const setup = initCanvas(canvas.id, 200);
+            if (!setup) return;
+            const { canvas: solCanvas, ctx: solCtx } = setup;
+            const primary = getThemeColor('--primary');
+            const animations = ['heatmap', 'anomaly', 'hash', 'training', 'loss', 'gnn', 'force', 'lstm'];
+            let currentIndex = 0;
+            let time = 0, epoch = 0, loss = 1, lstmTime = 0;
+
+            const gnnNodes = Array(5).fill().map(() => ({
+                x: Math.random() * solCanvas.width,
+                y: Math.random() * solCanvas.height,
+                vx: (Math.random() - 0.5) * 2,
+                vy: (Math.random() - 0.5) * 2
+            }));
+            const forceNodes = Array(6).fill().map(() => ({
+                x: Math.random() * solCanvas.width,
+                y: Math.random() * solCanvas.height,
+                vx: 0,
+                vy: 0
+            }));
+
+            function drawDynamicGraph(type) {
+                solCtx.clearRect(0, 0, solCanvas.width, solCanvas.height);
+                if (type === 'heatmap') {
+                    for (let x = 0; x < solCanvas.width; x += 10) {
+                        for (let y = 0; y < solCanvas.height; y += 10) {
+                            const intensity = Math.sin(x * 0.05 + time) * Math.cos(y * 0.05 + time);
+                            solCtx.fillStyle = `rgba(${primary.r}, ${primary.g}, ${primary.b}, ${intensity * 0.5 + 0.5})`;
+                            solCtx.fillRect(x, y, 10, 10);
+                        }
+                    }
+                    solCtx.fillStyle = 'white';
+                    solCtx.font = '16px Inter';
+                    solCtx.fillText('Crime Heatmap', 10, 20);
+                } else if (type === 'anomaly') {
+                    solCtx.beginPath();
+                    for (let x = 0; x < solCanvas.width; x++) {
+                        const y = solCanvas.height / 2 + Math.sin(x * 0.05 + time) * 40 + (Math.random() > 0.99 ? 50 : 0);
+                        solCtx.lineTo(x, y);
+                    }
+                    solCtx.strokeStyle = `rgb(${primary.r}, ${primary.g}, ${primary.b})`;
+                    solCtx.lineWidth = 2;
+                    solCtx.stroke();
+                    solCtx.fillStyle = 'white';
+                    solCtx.font = '16px Inter';
+                    solCtx.fillText('Anomaly Detection', 10, 20);
+                } else if (type === 'hash') {
+                    solCtx.font = '16px Inter';
+                    for (let i = 0; i < 5; i++) {
+                        const hash = Math.floor(Math.sin(time + i) * 1000000).toString(16).slice(0, 8);
+                        solCtx.fillStyle = `rgb(${primary.r}, ${primary.g}, ${primary.b})`;
+                        solCtx.fillText(hash, 20, 40 + i * 30);
+                    }
+                    solCtx.fillStyle = 'white';
+                    solCtx.fillText('Blockchain Hash', 10, 20);
+                }
+                time += 0.05;
+            }
+
+            function drawTraining() {
+                solCtx.clearRect(0, 0, solCanvas.width, solCanvas.height);
+                solCtx.beginPath();
+                for (let x = 0; x < solCanvas.width; x++) {
+                    const y = solCanvas.height / 2 + Math.sin(x * 0.05 + epoch * 0.1) * loss * 50;
+                    solCtx.lineTo(x, y);
+                }
+                solCtx.strokeStyle = `rgb(${primary.r}, ${primary.g}, ${primary.b})`;
+                solCtx.lineWidth = 2;
+                solCtx.stroke();
+                solCtx.fillStyle = 'white';
+                solCtx.font = '16px Inter';
+                solCtx.fillText(`Epoch: ${Math.floor(epoch / 60)}`, 10, 20);
+                epoch++;
+                loss *= 0.995;
+                if (loss < 0.1) loss = 1;
+            }
+
+            function drawLoss() {
+                solCtx.clearRect(0, 0, solCanvas.width, solCanvas.height);
+                solCtx.beginPath();
+                for (let x = 0; x < solCanvas.width; x++) {
+                    const y = solCanvas.height - Math.exp(-x * 0.02) * 100 * (1 + Math.sin(time) * 0.1);
+                    solCtx.lineTo(x, y);
+                }
+                solCtx.strokeStyle = `rgb(${primary.r}, ${primary.g}, ${primary.b})`;
+                solCtx.lineWidth = 2;
+                solCtx.stroke();
+                solCtx.fillStyle = 'white';
+                solCtx.font = '16px Inter';
+                solCtx.fillText('Loss Convergence', 10, 20);
+                time += 0.05;
+            }
+
+            function drawGNN() {
+                solCtx.clearRect(0, 0, solCanvas.width, solCanvas.height);
+                gnnNodes.forEach(n => {
+                    n.x += n.vx;
+                    n.y += n.vy;
+                    if (n.x < 0 || n.x > solCanvas.width) n.vx = -n.vx;
+                    if (n.y < 0 || n.y > solCanvas.height) n.vy = -n.vy;
+                    solCtx.beginPath();
+                    solCtx.arc(n.x, n.y, 8, 0, Math.PI * 2);
+                    solCtx.fillStyle = `rgb(${primary.r}, ${primary.g}, ${primary.b})`;
+                    solCtx.fill();
+                });
+                for (let i = 0; i < gnnNodes.length; i++) {
+                    for (let j = i + 1; j < gnnNodes.length; j++) {
+                        solCtx.beginPath();
+                        solCtx.moveTo(gnnNodes[i].x, gnnNodes[i].y);
+                        solCtx.lineTo(gnnNodes[j].x, gnnNodes[j].y);
+                        solCtx.strokeStyle = `rgba(${primary.r}, ${primary.g}, ${primary.b}, 0.5)`;
+                        solCtx.lineWidth = 2;
+                        solCtx.stroke();
+                    }
+                }
+                solCtx.fillStyle = 'white';
+                solCtx.font = '16px Inter';
+                solCtx.fillText('Network', 10, 20);
+            }
+
+            function drawForceDirected() {
+                solCtx.clearRect(0, 0, solCanvas.width, solCanvas.height);
+                forceNodes.forEach((n, i) => {
+                    forceNodes.forEach((m, j) => {
+                        if (i !== j) {
+                            const dx = m.x - n.x;
+                            const dy = m.y - n.y;
+                            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+                            const force = Math.min(100 / dist, 1);
+                            n.vx += dx / dist * force * 0.1;
+                            n.vy += dy / dist * force * 0.1;
+                        }
+                    });
+                    n.vx *= 0.95;
+                    n.vy *= 0.95;
+                    n.x += n.vx;
+                    n.y += n.vy;
+                    if (n.x < 0 || n.x > solCanvas.width) n.vx = -n.vx;
+                    if (n.y < 0 || n.y > solCanvas.height) n.vy = -n.vy;
+                });
+                forceNodes.forEach(n => {
+                    solCtx.beginPath();
+                    solCtx.arc(n.x, n.y, 5, 0, Math.PI * 2);
+                    solCtx.fillStyle = `rgb(${primary.r}, ${primary.g}, ${primary.b})`;
+                    solCtx.fill();
+                });
+                for (let i = 0; i < forceNodes.length; i++) {
+                    for (let j = i + 1; j < forceNodes.length; j++) {
+                        solCtx.beginPath();
+                        solCtx.moveTo(forceNodes[i].x, forceNodes[i].y);
+                        solCtx.lineTo(forceNodes[j].x, forceNodes[j].y);
+                        solCtx.strokeStyle = `rgba(${primary.r}, ${primary.g}, ${primary.b}, 0.3)`;
+                        solCtx.lineWidth = 1;
+                        solCtx.stroke();
+                    }
+                }
+                solCtx.fillStyle = 'white';
+                solCtx.font = '16px Inter';
+                solCtx.fillText('Force Layout', 10, 20);
+            }
+
+            function drawLSTM() {
+                solCtx.clearRect(0, 0, solCanvas.width, solCanvas.height);
+                for (let i = 0; i < 5; i++) {
+                    const x = (i + 0.5) * (solCanvas.width / 5);
+                    solCtx.beginPath();
+                    solCtx.rect(x - 20, solCanvas.height / 2 - 20 + Math.sin(lstmTime + i) * 10, 40, 40);
+                    solCtx.strokeStyle = `rgb(${primary.r}, ${primary.g}, ${primary.b})`;
+                    solCtx.lineWidth = 2;
+                    solCtx.stroke();
+                }
+                solCtx.fillStyle = 'white';
+                solCtx.font = '16px Inter';
+                solCtx.fillText('Time Series', 10, 20);
+                lstmTime += 0.05;
+            }
+
+            function animateSolutions() {
+                const currentAnimation = animations[currentIndex];
+                if (currentAnimation === 'heatmap' || currentAnimation === 'anomaly' || currentAnimation === 'hash') {
+                    drawDynamicGraph(currentAnimation);
+                } else if (currentAnimation === 'training') {
+                    drawTraining();
+                } else if (currentAnimation === 'loss') {
+                    drawLoss();
+                } else if (currentAnimation === 'gnn') {
+                    drawGNN();
+                } else if (currentAnimation === 'force') {
+                    drawForceDirected();
+                } else if (currentAnimation === 'lstm') {
+                    drawLSTM();
+                }
+                requestAnimationFrame(animateSolutions);
+            }
+
+            // Auto-switch animations every 5 seconds
+            function switchAnimation() {
+                currentIndex = (currentIndex + 1) % animations.length;
+                time = 0;
+                epoch = 0;
+                loss = 1;
+                lstmTime = 0;
+            }
+
+            setInterval(switchAnimation, 5000); // Switch every 5 seconds
+            animateSolutions();
+        }
+
+        // Original animations (unchanged)
         function initGradientDescent(canvas) {
             const ctx = canvas.getContext('2d');
             resizeCanvas(canvas);
@@ -818,99 +1171,6 @@
 
                 t += 0.02;
                 if (t > Math.PI * 2) t = 0;
-                requestAnimationFrame(draw);
-            }
-            draw();
-        }
-
-        function initSpatioTemporalGNN(canvas) {
-            const ctx = canvas.getContext('2d');
-            resizeCanvas(canvas);
-            window.addEventListener('resize', () => resizeCanvas(canvas));
-            const primary = getThemeColor('--primary');
-            const nodes = Array(10).fill().map((_, i) => ({
-                x: canvas.width * (0.2 + 0.6 * Math.cos(i * Math.PI / 5)),
-                y: canvas.height * (0.2 + 0.6 * Math.sin(i * Math.PI / 5)),
-                phase: Math.random() * Math.PI * 2
-            }));
-            const edges = [];
-            for (let i = 0; i < nodes.length; i++) {
-                for (let j = i + 1; j < nodes.length; j++) {
-                    if (Math.random() > 0.7) {
-                        edges.push([i, j]);
-                    }
-                }
-            }
-            let timeStep = 0;
-
-            function draw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                edges.forEach(([i, j]) => {
-                    const n1 = nodes[i];
-                    const n2 = nodes[j];
-                    const pulse = 0.5 + 0.5 * Math.sin(timeStep + (i + j) * 0.2);
-                    ctx.beginPath();
-                    ctx.moveTo(n1.x, n1.y);
-                    ctx.lineTo(n2.x, n2.y);
-                    ctx.strokeStyle = `rgba(${primary.r}, ${primary.g}, ${primary.b}, ${pulse * 0.3})`;
-                    ctx.stroke();
-                });
-
-                nodes.forEach((node, i) => {
-                    ctx.beginPath();
-                    ctx.arc(node.x, node.y, 5 + 2 * Math.sin(node.phase + timeStep), 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(${primary.r}, ${primary.g}, ${primary.b}, ${0.5 + 0.5 * Math.cos(node.phase)})`;
-                    ctx.fill();
-                    node.phase += 0.02;
-                });
-
-                timeStep += 0.05;
-                requestAnimationFrame(draw);
-            }
-            draw();
-        }
-
-        function initExplainableAI(canvas) {
-            const ctx = canvas.getContext('2d');
-            resizeCanvas(canvas);
-            window.addEventListener('resize', () => resizeCanvas(canvas));
-            const primary = getThemeColor('--primary');
-            const particles = Array(50).fill().map(() => ({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 2,
-                vy: (Math.random() - 0.5) * 2,
-                radius: Math.random() * 3 + 1,
-                opacity: Math.random() * 0.5 + 0.3
-            }));
-
-            function draw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(p => {
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(${primary.r}, ${primary.g}, ${primary.b}, ${p.opacity})`;
-                    ctx.fill();
-
-                    p.x += p.vx;
-                    p.y += p.vy;
-
-                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
-                    particles.forEach(other => {
-                        if (p !== other) {
-                            const dist = Math.hypot(p.x - other.x, p.y - other.y);
-                            if (dist < 50) {
-                                ctx.beginPath();
-                                ctx.moveTo(p.x, p.y);
-                                ctx.lineTo(other.x, other.y);
-                                ctx.strokeStyle = `rgba(${primary.r}, ${primary.g}, ${primary.b}, ${0.2 * (1 - dist / 50)})`;
-                                ctx.stroke();
-                            }
-                        }
-                    });
-                });
                 requestAnimationFrame(draw);
             }
             draw();
@@ -946,11 +1206,16 @@
                     const layer1 = Math.floor(i / nodesPerLayer);
                     if (layer1 < layers - 1) {
                         for (let j = 0; j < nodesPerLayer; j++) {
-                            const node2 = nodes[(layer1 + 1) * nodesPerLayer + j];
-                            ctx.beginPath();
-                            ctx.moveTo(node1.x, node1.y);
-                            ctx.lineTo(node2.x, node2.y);
-                            ctx.stroke();
+                            const node2Index = (layer1 + 1) * nodesPerLayer + j;
+                            if (node2Index < nodes.length) { // Safety check
+                                const node2 = nodes[node2Index];
+                                ctx.beginPath();
+                                ctx.moveTo(node1.x, node1.y);
+                                ctx.lineTo(node2.x, node2.y);
+                                ctx.strokeStyle = `rgba(${primary.r}, ${primary.g}, ${primary.b}, 0.3)`; // Ensure stroke style
+                                ctx.lineWidth = 1;
+                                ctx.stroke();
+                            }
                         }
                     }
                 }
@@ -982,7 +1247,7 @@
                 rotation: 0,
                 rotationSpeed: 0.03
             };
-            const bounce = 1; // Perfect bounce for continuous motion
+            const bounce = 1;
 
             function draw() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -1097,44 +1362,6 @@
             draw();
         }
 
-        function initRL(canvas) {
-            const ctx = canvas.getContext('2d');
-            resizeCanvas(canvas);
-            window.addEventListener('resize', () => resizeCanvas(canvas));
-            const primary = getThemeColor('--primary');
-            let agentX = canvas.width / 2;
-            let agentY = canvas.height / 2;
-            const goalX = canvas.width * 0.8;
-            const goalY = canvas.height * 0.2;
-
-            function draw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.beginPath();
-                ctx.arc(goalX, goalY, 10, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(${primary.r}, ${primary.g}, ${primary.b}, 0.5)`;
-                ctx.fill();
-
-                ctx.beginPath();
-                ctx.arc(agentX, agentY, 5, 0, Math.PI * 2);
-                ctx.fillStyle = `rgb(${primary.r}, ${primary.g}, ${primary.b})`;
-                ctx.fill();
-
-                const dx = goalX - agentX;
-                const dy = goalY - agentY;
-                const distance = Math.hypot(dx, dy);
-                if (distance > 10) {
-                    agentX += (dx / distance) * 2;
-                    agentY += (dy / distance) * 2;
-                } else {
-                    agentX = canvas.width * Math.random();
-                    agentY = canvas.height * Math.random();
-                }
-
-                requestAnimationFrame(draw);
-            }
-            draw();
-        }
-
         function initFlowingParticles(canvas) {
             const ctx = canvas.getContext('2d');
             resizeCanvas(canvas);
@@ -1209,13 +1436,13 @@
 
         // Initialize animations
         initGradientDescent(document.getElementById('gradientDescent'));
-        initSpatioTemporalGNN(document.getElementById('spatioTemporalGNN'));
-        initExplainableAI(document.getElementById('explainableAI'));
+        initCNNLayers(document.getElementById('spatioTemporalGNN')); // Replaced
+        initSolutions(document.getElementById('explainableAI')); // Replaced
         initNeuralNetwork(document.getElementById('neuralNetwork'));
         initCNN(document.getElementById('cnnAnimation'));
         initLLM(document.getElementById('llmAnimation'));
         initAttention(document.getElementById('attentionAnimation'));
-        initRL(document.getElementById('rlAnimation'));
+        initProgress(document.getElementById('rlAnimation')); // Replaced
         initFlowingParticles(document.getElementById('flowingParticles'));
         initCNNFooter(document.getElementById('cnnFooterAnimation'));
 
@@ -1231,4 +1458,5 @@
         }
     </script>
 </body>
+
 </html>
